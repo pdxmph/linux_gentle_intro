@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>01_slide.html</title>
+
+</head>
+
+<body>
+
+<p>!SLIDE 
+# A Gentle Introduction to<br />
+# Linux and Unix</p>
+
+<p>!SLIDE bullets incremental</p>
+
+<h1 id="goals">Goals</h1>
+
+<ul>
+  <li>A brief history of Unix and Linux</li>
+  <li>How people interact with Linux</li>
+  <li>Packages, services, and files</li>
+  <li>Tying it in with Puppet </li>
+</ul>
+
+<p>&lt;!SLIDE bullets incremental&gt;</p>
+
+<h1 id="operating-systems">Operating Systems</h1>
+
+<ul>
+  <li>Windows, Mac OS, Linux, Unix: All offer a way for a user to interact with a computer</li>
+  <li>They provide an interface: a GUI you can use with a mouse or a command line (CLI) you can use with a keyboard</li>
+  <li>Most computers can run many kinds of operating systems</li>
+</ul>
+
+<p>&lt;!SLIDE bullets incremental&gt;</p>
+
+<h1 id="freeopen-source-software-foss">Free/Open Source Software (&#8220;FOSS&#8221;)</h1>
+
+<p>Nutshell: &#8220;The source code for software should be freely available to all.&#8221;</p>
+
+<ul>
+  <li>&#8220;Free Software&#8221; is the branch of &#8220;FOSS&#8221; more interested in ethical questions</li>
+  <li>&#8220;Open Source&#8221; was coined to make these ideas more business friendly</li>
+  <li>Puppet is open source software</li>
+</ul>
+
+<p>&lt;!SLIDE bullets incremental&gt;
+# In the Beginning Was UNIX  #</p>
+
+<ul>
+  <li>Created in the &#8217;70s</li>
+  <li>Reflects the technology of the time (plain text terminals, academic in flavor)</li>
+  <li>Tended to think of problems in terms of moving text around between small programs <img src="monitor.png" alt="terminal" /></li>
+</ul>
+
+<p>&lt;!SLIDE bullets incremental&gt;
+# UNIX  Becomes Unix</p>
+
+<ul>
+  <li>A number of companies licensed UNIX, over time it fragmented into numerous, sometimes incompatible flavors</li>
+  <li>Legal battles created uncertainty about some of these versions</li>
+  <li>Despite this, Unix remained dominant in data centers and for networked applications </li>
+</ul>
+
+<p>&lt;!SLIDE bullets incremental&gt;
+# Along Comes Linux</p>
+
+<ul>
+  <li>1991: Linus Torvalds uses a small, academic Unix variant to scaffold his own version of Unix</li>
+  <li>Linux leverages existing software from the Free Software movement to provide a complete operating system</li>
+  <li>Software companies begin to add value to Linux by packaging easier-to-install versions of it and refining the user experience (&#8220;distributions&#8221; or &#8220;distros&#8221;)</li>
+</ul>
+
+<p>&lt;!SLIDE bullets incremental&gt;
+# Linux Distributions</p>
+
+<p>There are several major Linux distributors:</p>
+
+<ul>
+  <li>Red Hat (CentOS, Fedora)</li>
+  <li>Debian </li>
+  <li>Ubuntu </li>
+  <li>SUSE</li>
+</ul>
+
+<p>&lt;!SLIDE bullets incremental&gt;
+# Unix Versions</p>
+
+<ul>
+  <li>AIX (IBM)</li>
+  <li>HP/UX (Hewlett-Packard)</li>
+  <li>FreeBSD, OpenBSD, NetBSD (community)</li>
+  <li>Solaris (Oracle/Sun)</li>
+  <li>Mac OS (BSD Unix inside)</li>
+</ul>
+
+<p>&lt;!SLIDE bullets incremental&gt;</p>
+
+<h1 id="unixlinux-culture">Unix/Linux Culture</h1>
+
+<p>The balance has shifted heavily toward &#8220;Linuxisms&#8221; as commercial Unix fades</p>
+
+<ul>
+  <li>Still text-centric</li>
+  <li>Traditionalist</li>
+  <li>Heavily informed by open source and free software movements</li>
+</ul>
+
+<p>&lt;!SLIDE bullets incremental&gt;</p>
+
+<h1 id="how-a-linux-server-is-organized">How a Linux Server Is Organized</h1>
+
+<ul>
+  <li>Most administrators interact via a text interface</li>
+  <li>Servers provide services: email, web, file storage, time servers</li>
+  <li>Services are just programs</li>
+  <li>You <span style="color:red;">install</span> a package to run a <span style="color:red;">service</span> based on its <span style="color:red;">configuration files</span></li>
+</ul>
+
+<p>&lt;!SLIDE bullets incremental&gt;</p>
+
+<h1 id="packages">Packages</h1>
+
+<p>Packages are bundles of files and software needed to provide a service</p>
+
+<ul>
+  <li>Packages are installed and managed by a package manager</li>
+  <li>Packages provide all the needed parts of a given service</li>
+  <li>If a program needs other programs to run, those dependencies are satisfied by the package manager</li>
+</ul>
+
+<p>&lt;!SLIDE bullets incremental&gt;</p>
+
+<h1 id="configuration-files">Configuration Files</h1>
+
+<ul>
+  <li>In the Unix world, even if there&#8217;s a graphical tool to change the way a program works, it is probably using a text-based configuration file. </li>
+  <li>In the Windows world, most configuration is handled in a &#8220;Registry,&#8221; which is not meant to be directly read by people.</li>
+  <li>In the Mac world, configuration is often handled in text files, but sometimes there are computers-only files, too.</li>
+</ul>
+
+<p>&lt;!SLIDE incremental bullets&gt;</p>
+
+<h1 id="looking-at-a-service">Looking at a Service</h1>
+
+<p>Apache is a common web server we&#8217;ll use as an example</p>
+
+<ul>
+  <li>We have to <span style="color:red;"><em>install</em></span> an Apache package, which provides the Apache program and basic configuration files</li>
+  <li>We have to <span style="color:red;"><em>configure</em></span> Apache to run the way we want it to run</li>
+  <li>We have to <span style="color:red;"><em>start</em></span> the Apache service</li>
+</ul>
+
+<p>&lt;!SLIDE incremental bullets&gt;</p>
+
+<h1 id="installing-apache">Installing Apache</h1>
+
+<p>Depending on the version of Linux or Unix we&#8217;re using, there are a number of ways to install a package</p>
+
+<ul>
+  <li>
+    <p>We&#8217;re on a Debian system, so we&#8217;ll use the <code>apt-get</code> command: <span style="color:red;"><code>apt-get install apache2</code></span></p>
+  </li>
+  <li>
+    <p>The <code>apt-get</code> command downloaded the Apache package for us, checked to make sure there were no other <em>dependencies</em>, then it put the Apache program files where they need to be. <img src="monitor.png" alt="terminal" /></p>
+  </li>
+</ul>
+
+<p>&lt;!SLIDE incremental bullets&gt;</p>
+
+<h1 id="configuring-apache">Configuring Apache</h1>
+
+<p>Once the Apache package is installed, we have to configure it. </p>
+
+<ul>
+  <li>By convention, most configuration files for a Unix or Linux system live in a directory called <code>etc</code></li>
+  <li>Most configuration files are plain text</li>
+  <li>Configuration files come in a variety of formats and styles <img src="monitor.png" alt="terminal" /></li>
+</ul>
+
+<p>&lt;!SLIDE incremental bullets&gt;</p>
+
+<h1 id="running-apache">Running Apache</h1>
+
+<p>Now that Apache is installed and configured, we have to start the Apache service. </p>
+
+<ul>
+  <li>Linux and Unix have a variety of tools for starting and stopping services</li>
+  <li>Unix systems have a collection of programs that help make sure a service is running correctly  <img src="monitor.png" alt="terminal" /></li>
+  <li>Once a service is running, it&#8217;s not usually very interactive. If you have to reconfigure it, you will have to stop it and restart it.</li>
+</ul>
+
+<p>&lt;!SLIDE incremental bullets&gt;</p>
+
+<h1 id="connecting-it-all-with-puppet">Connecting It All With Puppet</h1>
+
+<p>As we just saw, there&#8217;s a lot to keep track of:</p>
+
+<ul>
+  <li>There are lots of configuration files</li>
+  <li>We have to keep track of the packages we need to provide services</li>
+  <li>We have to make sure a service is running</li>
+  <li>It doesn&#8217;t get any easier when have dozens or hundreds of servers</li>
+</ul>
+
+<p>&lt;!SLIDE incremental bullets&gt;</p>
+
+<h1 id="what-puppet-does">What Puppet Does</h1>
+
+<ul>
+  <li>Puppet provides a simple language (a &#8220;DSL&#8221;) that makes it easy to express how a given computer should be configured</li>
+  <li>Puppet can install, remove and upgrade packages</li>
+  <li>Puppet can start and stop services</li>
+  <li>Puppet can set the contents of configuration files</li>
+</ul>
+
+<p>&lt;!SLIDE incremental bullets&gt;</p>
+
+<h1 id="how-puppet-works">How Puppet Works</h1>
+
+<ul>
+  <li>A &#8220;puppet master&#8221; contains information about the configuration of all the computers it&#8217;s responsible for</li>
+  <li>A &#8220;puppet agent&#8221; is a computer that depends on a puppet master for its configuration information</li>
+  <li>By default, a puppet agent checks in with its puppet master once every 30 minutes, the puppet master makes sure the agent&#8217;s system is still configured correctly: packages installed, files configured correctly, services running</li>
+</ul>
+
+<p>&lt;!SLIDE &gt;</p>
+
+<h1 id="what-puppet-looks-like">What Puppet Looks Like</h1>
+
+<pre><code>package { 'apache2':
+  ensure =&gt; installed,
+}
+
+file { '/etc/apache2/apache.config': 
+  ensure =&gt; present,
+  content =&gt; "//SomeConfigurationText//",
+  require =&gt; Package['apache2'],
+}
+
+service { 'apache':
+  ensure  =&gt; running,
+  enable  =&gt; true,
+  require =&gt; File['/etc/apache2/apache.config'],
+}
+</code></pre>
+
+<p>&lt;!SLIDE incremental bullets&gt;</p>
+
+<h1 id="why-puppet-works-for-people">Why Puppet Works for People</h1>
+
+<ul>
+  <li>One place to ensure systems are configured properly</li>
+  <li>Makes it possible to bring up new machines quickly and easily</li>
+  <li>Versionable configuration</li>
+  <li>Cuts through differences with a relatively simple configuration language</li>
+</ul>
+
+<p>&lt;!SLIDE incremental&gt;</p>
+
+<h1 id="whats-next">What&#8217;s Next?</h1>
+
+<p>The Puppet Fundamentals course offers hands-on training where you get to see Puppet Enterprise in action, write your own Puppet code, and learn how to create reusable Puppet modules. </p>
+
+</body>
+</html>
