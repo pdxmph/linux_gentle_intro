@@ -1,8 +1,12 @@
-.content {
-    font-family: Georgia;
-    font-size: .9em;
+code {
+    font-size: .8em;
 }
 
-code {
-    font-size: .6em;
-}
+.content {font-family:"PT Sans","Lucida Grande",Lucida,Verdana,sans-serif;font-size:14px}
+a {display:block;color:#666}
+a:focus,a:hover{text-decoration:none}
+h1,h2,h3 {font-family:Arvo,"Lucida Grande",Lucida,Verdana,sans-serif;font-weight:normal;font-style:normal;margin:0 0 .25em;color:#302B6D}
+h2{font-size:40px;color:#302B6D}
+h3{font-size:26px;color:#7C6AAB;margin-bottom:.5em}
+li {font-size:32px;}
+

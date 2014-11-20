@@ -1,8 +1,8 @@
-!SLIDE 
+<!SLIDE>
 # A Gentle Introduction to  
 # Linux and Unix
 
-!SLIDE bullets incremental
+<!SLIDE bullets incremental>
 
 # Goals
 
@@ -40,13 +40,13 @@ Nutshell: "The source code for software should be freely available to all."
 <!SLIDE commandline incremental>
 
 # Pipes and Filters
-
+	
+	@@@ sh
 	$ echo "The quick brown fox jumped over the lazy dog!" 
 
 	The quick brown fox jumped over the lazy dog!
 
-
-	$ echo "The quick brown fox jumped over the lazy dog!" | sed s/foo/fox/
+	$ echo "The quick brown fox jumped over the lazy dog!" | sed s/fox/foo/
 
 	The quick brown foo jumped over the lazy dog!
 	
@@ -57,7 +57,6 @@ Nutshell: "The source code for software should be freely available to all."
 	baz.txt
 	zoobar.txt
 	foobar.txt
-	barbaz.txt
 
 	
 	$ ls | grep bar | sort
@@ -117,7 +116,7 @@ The balance has shifted heavily toward "Linuxisms" as commercial Unix fades
 * Most administrators interact via a text interface
 * Servers provide services: email, web, file storage, time servers
 * Services are just programs
-* You <span style="color:red;">install</span> a package to run a <span style="color:red;">service</span> based on its <span style="color:red;">configuration files</span>
+* You install a <span style="color:red;">package</span> and modify its <span style="color:red;">configuration files</span> to run a <span style="color:red;">service</span>
 
 
 <!SLIDE bullets incremental>
@@ -156,11 +155,10 @@ Apache is a common web server we'll use as an example
 
 Depending on the version of Linux or Unix we're using, there are a number of ways to install a package
 
-* We're on a Debian system, so we'll use the `apt-get` command: 
+* We're on a Debian system, so we'll use the `apt-get` command:  
+  <span style="color:red;">`apt-get install apache2`</span>
 
-<span style="color:red;">`apt-get install apache2`</span>
-
-* The `apt-get` command downloaded the Apache package for us, checked to make sure there were no other _dependencies_, then it put the Apache program files where they need to be. ![terminal](monitor.png)
+* The `apt-get` command downloaded the Apache package for us, checked to make sure there were no other _dependencies_, then it put the Apache program files where they need to be.
 
 <!SLIDE incremental bullets>
 
@@ -170,7 +168,7 @@ Once the Apache package is installed, we have to configure it.
 
 * By convention, most configuration files for a Unix or Linux system live in a directory called `etc`
 * Most configuration files are plain text
-* Configuration files come in a variety of formats and styles ![terminal](monitor.png)
+* Configuration files come in a variety of formats and styles
 
 <!SLIDE incremental bullets>
 
@@ -179,7 +177,7 @@ Once the Apache package is installed, we have to configure it.
 Now that Apache is installed and configured, we have to start the Apache service. 
 
 * Linux and Unix have a variety of tools for starting and stopping services
-* Unix systems have a collection of programs that help make sure a service is running correctly  ![terminal](monitor.png)
+* Unix systems have a collection of programs that help make sure a service is running correctly
 * Once a service is running, it's not usually very interactive. If you have to reconfigure it, you will have to stop it and restart it.
 
 <!SLIDE incremental bullets>
@@ -210,11 +208,11 @@ As we just saw, there's a lot to keep track of:
 * A "puppet agent" is a computer that depends on a puppet master for its configuration information
 * By default, a puppet agent checks in with its puppet master once every 30 minutes, the puppet master makes sure the agent's system is still configured correctly: packages installed, files configured correctly, services running
 
-<!SLIDE >
+<!SLIDE  smaller>
 
 # What Puppet Looks Like
 
-
+	@@@ Puppet
 	package { 'apache2':
 	  ensure => installed,
 	}
